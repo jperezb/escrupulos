@@ -318,4 +318,52 @@ export const dilemas: Dilemma[] = [
   { id: 278, text: "Tu pareja te pide que cambies de trabajo porque el tuyo no le parece lo suficientemente prestigioso. ¿Lo consideras?", category: "amor" },
   { id: 279, text: "Tu pareja coquetea con otras personas y dice que es solo su personalidad. ¿Lo aceptas?", category: "amor" },
   { id: 280, text: "Te ofrecen una beca de un año en el extranjero. Tu pareja dice que si te vas, la relación se acaba. ¿Te vas?", category: "amor" },
+
+  // ===== +18: AMOR Y RELACIONES =====
+  { id: 281, text: "Tu pareja te propone invitar a una tercera persona a la cama. ¿Aceptas?", category: "amor", mature: true },
+  { id: 282, text: "Descubres que tu pareja ve pornografía regularmente. ¿Te molesta?", category: "amor", mature: true },
+  { id: 283, text: "Tu ex te envía fotos íntimas intentando reconquistarte. ¿Las borras sin mirarlas?", category: "amor", mature: true },
+  { id: 284, text: "Tu pareja te confiesa una fantasía sexual que te incomoda. ¿Intentas cumplirla?", category: "amor", mature: true },
+  { id: 285, text: "Descubres que tu pareja tiene una cuenta en un sitio de contenido para adultos. ¿Lo confrontas?", category: "amor", mature: true },
+  { id: 286, text: "Un amigo te ofrece ir a un club de striptease para tu despedida de soltero/a. ¿Vas?", category: "amor", mature: true },
+  { id: 287, text: "Tu pareja quiere grabar un video íntimo de ustedes. ¿Aceptas?", category: "amor", mature: true },
+  { id: 288, text: "Descubres que tu pareja le envía mensajes subidos de tono a otra persona. Dice que nunca pasó a lo físico. ¿Lo perdonas?", category: "amor", mature: true },
+  { id: 289, text: "Un compañero de trabajo muy atractivo te invita a tomar algo a solas. Sabes que hay tensión sexual. ¿Vas?", category: "amor", mature: true },
+  { id: 290, text: "Tu pareja te pide que vean pornografía juntos. ¿Aceptas?", category: "amor", mature: true },
+
+  // ===== +18: SUSTANCIAS Y VICIOS =====
+  { id: 291, text: "Un amigo te ofrece probar drogas recreativas en una fiesta. ¿Las pruebas?", category: "sociedad", mature: true },
+  { id: 292, text: "Descubres que tu compañero de cuarto cultiva marihuana en casa. ¿Le pides que pare?", category: "sociedad", mature: true },
+  { id: 293, text: "Te invitan a una fiesta donde sabes que habrá drogas ilegales. ¿Vas?", category: "amistad", mature: true },
+  { id: 294, text: "Un amigo maneja drogado y quiere llevarte a casa. ¿Te subes?", category: "amistad", mature: true },
+  { id: 295, text: "Tu mejor amigo se está volviendo adicto a las apuestas en línea y te pide dinero prestado. ¿Se lo das?", category: "amistad", mature: true },
+  { id: 296, text: "Descubres que tu hermano menor consume drogas duras. ¿Se lo dices a tus padres?", category: "familia", mature: true },
+  { id: 297, text: "En un viaje a un país donde la marihuana es legal, ¿la probarías aunque nunca lo hayas hecho?", category: "sociedad", mature: true },
+  { id: 298, text: "Un colega te ofrece pastillas para mantenerte despierto durante un proyecto importante. ¿Las tomas?", category: "trabajo", mature: true },
+
+  // ===== +18: SITUACIONES COMPROMETIDAS =====
+  { id: 299, text: "Encuentras el teléfono desbloqueado de tu pareja. ¿Revisas sus conversaciones privadas?", category: "amor", mature: true },
+  { id: 300, text: "Te atrae mucho la pareja de tu mejor amigo/a. ¿Se lo confiesas a alguien?", category: "amistad", mature: true },
+  { id: 301, text: "Tu jefe/a te insinúa que si sales con él/ella tendrás un ascenso. ¿Lo consideras?", category: "trabajo", mature: true },
+  { id: 302, text: "Descubres que un amigo paga por compañía en sitios de escorts. ¿Cambias tu opinión sobre él?", category: "amistad", mature: true },
+  { id: 303, text: "Estás en una relación estable pero alguien que te atrae mucho te invita a pasar la noche. ¿Cedes a la tentación?", category: "amor", mature: true },
+  { id: 304, text: "Un amigo te propone crear perfiles falsos en apps de citas solo por diversión. ¿Participas?", category: "amistad", mature: true },
+  { id: 305, text: "Tu pareja te confiesa que antes de conocerte trabajó en la industria del entretenimiento para adultos. ¿Te importa?", category: "amor", mature: true },
+  { id: 306, text: "Descubres que un profesor universitario tiene una relación con un alumno mayor de edad. ¿Lo reportas?", category: "sociedad", mature: true },
+  { id: 307, text: "Un amigo te cuenta que le fue infiel a su pareja con alguien del grupo. ¿Guardas el secreto?", category: "amistad", mature: true },
+  { id: 308, text: "Te ofrecen mucho dinero por posar desnudo/a para un proyecto artístico. ¿Aceptas?", category: "dinero", mature: true },
+  { id: 309, text: "Descubres que tu vecino tiene una relación con alguien mucho menor (pero mayor de edad). ¿Te parece bien?", category: "sociedad", mature: true },
+  { id: 310, text: "Tu pareja quiere ir a una fiesta swinger por curiosidad. ¿Lo acompañas?", category: "amor", mature: true },
+
+  // ===== +18: DILEMAS MORALES FUERTES =====
+  { id: 311, text: "Descubres que tu padre tiene un hijo secreto con otra mujer. ¿Se lo dices a tu madre?", category: "familia", mature: true },
+  { id: 312, text: "Un familiar cercano confiesa que cometió un crimen grave hace años. ¿Lo denuncias?", category: "familia", mature: true },
+  { id: 313, text: "Te enteras de que un político local visita prostíbulos. Tienes pruebas. ¿Las publicas?", category: "sociedad", mature: true },
+  { id: 314, text: "Podrías ganar mucho dinero vendiendo contenido íntimo en internet sin que nadie lo sepa. ¿Lo harías?", category: "dinero", mature: true },
+  { id: 315, text: "Tu mejor amigo te confiesa que tiene una aventura con una persona casada. ¿Le dices que está mal?", category: "amistad", mature: true },
+  { id: 316, text: "Descubres que tu pareja tiene un segundo teléfono que nunca te mencionó. ¿Le reclamas?", category: "amor", mature: true },
+  { id: 317, text: "Un amigo te propone ir a un país donde la prostitución es legal. ¿Aceptas el viaje?", category: "amistad", mature: true },
+  { id: 318, text: "Tu hermano/a te confiesa que tuvo una aventura con la pareja de un amigo cercano. ¿Guardas el secreto?", category: "familia", mature: true },
+  { id: 319, text: "Te ofrecen ser modelo de ropa interior con una paga excelente. Tu pareja se opone. ¿Lo haces?", category: "dinero", mature: true },
+  { id: 320, text: "Descubres que un compañero de trabajo tiene un negocio paralelo vendiendo sustancias ilegales. ¿Lo denuncias?", category: "trabajo", mature: true },
 ]

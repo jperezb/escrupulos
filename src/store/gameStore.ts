@@ -24,7 +24,7 @@ interface GameState {
 
   addPlayer: (name: string) => void
   removePlayer: (id: string) => void
-  startGame: (rounds?: number) => void
+  startGame: (rounds?: number, includeMature?: boolean) => void
   readyAfterPass: () => void
   submitAnswer: (answer: Answer) => void
   submitPrediction: (prediction: Answer, useDouble: boolean) => void
@@ -300,10 +300,11 @@ export const useGameStore = create<GameState>((set, get) => ({
     }))
   },
 
-  startGame: (rounds?: number) => {
+  startGame: (rounds?: number, includeMature?: boolean) => {
     const { players } = get()
     const totalRounds = rounds ?? players.length * 3
-    const deck = shuffle(dilemas).slice(0, totalRounds)
+    const pool = includeMature ? dilemas : dilemas.filter(d => !d.mature)
+    const deck = shuffle(pool).slice(0, totalRounds)
     const activePlayer = players[0]
     const lightning = isLightningRound(0)
 

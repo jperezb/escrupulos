@@ -13,6 +13,7 @@ export interface Dilemma {
   id: number
   text: string
   category: string
+  mature?: boolean
 }
 
 export interface Round {

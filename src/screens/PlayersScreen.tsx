@@ -7,6 +7,7 @@ const ROUND_OPTIONS = [4, 6, 8, 10, 12, 15, 20]
 export default function PlayersScreen() {
   const [name, setName] = useState('')
   const [rounds, setRounds] = useState(8)
+  const [mature, setMature] = useState(false)
   const navigate = useNavigate()
   const players = useGameStore(s => s.players)
   const addPlayer = useGameStore(s => s.addPlayer)
@@ -21,7 +22,7 @@ export default function PlayersScreen() {
   }
 
   const handleStart = () => {
-    startGame(rounds)
+    startGame(rounds, mature)
     navigate('/juego')
   }
 
@@ -96,6 +97,17 @@ export default function PlayersScreen() {
           ))}
         </div>
       </div>
+
+      <button
+        onClick={() => setMature(!mature)}
+        className={`w-full py-3 rounded-xl font-medium text-sm transition-all border ${
+          mature
+            ? 'bg-rose-500/15 border-rose-500/40 text-rose-300'
+            : 'bg-surface-light border-surface-lighter text-gray-400 hover:text-gray-200'
+        }`}
+      >
+        {mature ? '+18 activado — Incluye preguntas para adultos' : 'Modo +18 (preguntas para adultos)'}
+      </button>
 
       <button
         onClick={handleStart}
