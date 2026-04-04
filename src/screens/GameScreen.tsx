@@ -7,6 +7,8 @@ import AnswerSelector from '../components/AnswerSelector'
 import PredictionPhase from '../components/PredictionPhase'
 import RevealPhase from '../components/RevealPhase'
 import ScoreBoard from '../components/ScoreBoard'
+import Timer from '../components/Timer'
+import { LightningAnswer, LightningReveal } from '../components/LightningRound'
 
 export default function GameScreen() {
   const navigate = useNavigate()
@@ -30,23 +32,37 @@ export default function GameScreen() {
   const activePlayer = players.find(p => p.id === currentRound.activePlayerId)
   if (!activePlayer) return null
 
+  const isLightning = currentRound.isLightning
+
   return (
     <div className="flex flex-col min-h-full px-6 py-6">
       <div className="flex items-center justify-between mb-4">
-        <span className="text-sm text-gray-400">
-          Ronda {currentRoundIndex + 1} / {totalRounds}
-        </span>
+        <div className="flex items-center gap-2">
+          <span className="text-sm text-gray-400">
+            Ronda {currentRoundIndex + 1} / {totalRounds}
+          </span>
+          {isLightning && (
+            <span className="px-2 py-0.5 bg-violet-500/20 text-violet-300 text-xs font-bold rounded-full">
+              RELAMPAGO
+            </span>
+          )}
+        </div>
         <ScoreBoard />
       </div>
 
       <div className="flex-1 flex flex-col justify-center">
-        {phase === 'pass-phone' && <PassPhone />}
+        {(phase === 'pass-phone' || phase === 'lightning-pass') && <PassPhone />}
 
         {phase === 'answer' && (
-          <div className="space-y-6">
+          <div className="space-y-4">
             <p className="text-center text-gray-400 text-sm">
               <span className="font-bold text-white">{activePlayer.name}</span>, responde en secreto:
             </p>
+            <Timer
+              seconds={30}
+              onTimeout={() => useGameStore.getState().submitAnswer('depende')}
+              running={true}
+            />
             <DilemmaCard text={currentRound.dilemma.text} category={currentRound.dilemma.category} />
             <AnswerSelector onSelect={useGameStore.getState().submitAnswer} />
           </div>
@@ -59,6 +75,9 @@ export default function GameScreen() {
         {phase === 'reveal' && (
           <RevealPhase round={currentRound} activePlayer={activePlayer} />
         )}
+
+        {phase === 'lightning-answer' && <LightningAnswer />}
+        {phase === 'lightning-reveal' && <LightningReveal />}
       </div>
     </div>
   )
