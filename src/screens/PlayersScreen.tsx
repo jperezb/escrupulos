@@ -2,8 +2,11 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useGameStore } from '../store/gameStore'
 
+const ROUND_OPTIONS = [4, 6, 8, 10, 12, 15, 20]
+
 export default function PlayersScreen() {
   const [name, setName] = useState('')
+  const [rounds, setRounds] = useState(8)
   const navigate = useNavigate()
   const players = useGameStore(s => s.players)
   const addPlayer = useGameStore(s => s.addPlayer)
@@ -18,7 +21,7 @@ export default function PlayersScreen() {
   }
 
   const handleStart = () => {
-    startGame()
+    startGame(rounds)
     navigate('/juego')
   }
 
@@ -75,12 +78,31 @@ export default function PlayersScreen() {
         )}
       </div>
 
+      <div className="mt-6 mb-4">
+        <p className="text-gray-400 text-sm mb-2 text-center">Cantidad de rondas</p>
+        <div className="flex gap-2 justify-center flex-wrap">
+          {ROUND_OPTIONS.map(n => (
+            <button
+              key={n}
+              onClick={() => setRounds(n)}
+              className={`w-11 h-11 rounded-xl font-bold text-sm transition-all ${
+                rounds === n
+                  ? 'bg-brand-400 text-surface'
+                  : 'bg-surface-light text-gray-400 hover:text-white'
+              }`}
+            >
+              {n}
+            </button>
+          ))}
+        </div>
+      </div>
+
       <button
         onClick={handleStart}
         disabled={players.length < 2}
-        className="mt-6 w-full px-8 py-4 bg-brand-400 hover:bg-brand-300 disabled:opacity-30 disabled:hover:bg-brand-400 text-surface font-bold text-lg rounded-2xl transition-all active:scale-95"
+        className="w-full px-8 py-4 bg-brand-400 hover:bg-brand-300 disabled:opacity-30 disabled:hover:bg-brand-400 text-surface font-bold text-lg rounded-2xl transition-all active:scale-95"
       >
-        Comenzar ({players.length * 3} rondas)
+        Comenzar ({rounds} rondas)
       </button>
     </div>
   )
