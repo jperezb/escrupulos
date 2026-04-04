@@ -80,7 +80,7 @@ export default function PlayersScreen() {
         disabled={players.length < 2}
         className="mt-6 w-full px-8 py-4 bg-brand-400 hover:bg-brand-300 disabled:opacity-30 disabled:hover:bg-brand-400 text-surface font-bold text-lg rounded-2xl transition-all active:scale-95"
       >
-        Comenzar ({players.length * 2} rondas)
+        Comenzar ({players.length * 3} rondas)
       </button>
     </div>
   )
