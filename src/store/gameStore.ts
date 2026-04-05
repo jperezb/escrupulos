@@ -303,7 +303,7 @@ export const useGameStore = create<GameState>((set, get) => ({
   startGame: (rounds?: number, includeMature?: boolean) => {
     const { players } = get()
     const totalRounds = rounds ?? players.length * 3
-    const pool = includeMature ? dilemas : dilemas.filter(d => !d.mature)
+    const pool = includeMature ? dilemas.filter(d => d.mature) : dilemas.filter(d => !d.mature)
     const deck = shuffle(pool).slice(0, totalRounds)
     const activePlayer = players[0]
     const lightning = isLightningRound(0)
